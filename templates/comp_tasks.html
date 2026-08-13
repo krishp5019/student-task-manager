@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}
+completed task
+{% endblock %}
+
+{% block content %}
+
+<main class="page-container completed-page">
+
+    <section class="tasks-card">
+
+        <div class="card-heading">
+
+            <span class="eyebrow">Task history</span>
+
+            <h1>Completed Tasks</h1>
+
+            <p>
+                Tasks you have finished will appear here.
+            </p>
+
+        </div>
+
+
+        <table class="task-table">
+
+            <tr>
+                <th>ID</th>
+                <th>Task</th>
+                <th>Priority</th>
+            </tr>
+
+            {% for task in tasks %}
+
+            <tr>
+
+                <td>{{ loop.index }}</td>
+
+                <td>{{ task["task"] }}</td>
+
+                <td>{{ task["priority"] }}</td>
+
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+    </section>
+
+</main>
+
+{% endblock %}
